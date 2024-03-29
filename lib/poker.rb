@@ -38,3 +38,23 @@ class Card
       # Add implementation for evaluating hand value
     end
   end
+
+  class Player
+    attr_reader :name, :hand, :pot
+  
+    def initialize(name, pot)
+      @name = name
+      @hand = Hand.new
+      @pot = pot # Starting pot for betting
+    end
+  
+    def discard_cards(card_indices)
+      card_indices.each do |index|
+        @hand.cards.delete_at(index)
+      end
+    end
+  
+    def draw_cards(deck, number)
+      number.times { @hand.cards << deck.deal_card }
+    end
+  end
