@@ -17,6 +17,10 @@ class Card
     def deal_card
       @cards.pop
     end
+
+    def shuffle
+        @cards.shuffle!
+    end
   
     private
   
@@ -58,3 +62,5 @@ class Card
       number.times { @hand.cards << deck.deal_card }
     end
   end
+
+  
