@@ -120,6 +120,7 @@ class Card
     def show_hand
       puts "#{name}'s hand: #{hand}"
     end
+    
   end
   
   class Game
